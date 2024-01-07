@@ -91,7 +91,7 @@ class _UserProfileFormState extends State<UserProfileForm> {
     final userManager = Provider.of<UserManager>(context);
 
     //Ubah Sesuai APi
-    final url = "http://10.10.21.247:8000/img/";
+    final url = "https://pkbmharbang.com/img/";
 
     return FutureBuilder<Map<String, dynamic>>(
         future: RegisterApi().dashboardData(),

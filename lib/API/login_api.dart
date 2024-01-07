@@ -9,7 +9,7 @@ class LoginApi {
 
   Future<String?> authenticate(String email, String password) async {
     final response = await http.post(
-      Uri.parse('$baseUrl/api/login'),
+      Uri.parse('$baseUrl'),
       body: {'email': email, 'password': password},
     );
 
@@ -22,7 +22,9 @@ class LoginApi {
 
       return token;
     } else {
-      throw Exception('Failed to authenticate');
+      print('$baseUrl');
+      throw Exception(
+          'Failed to authenticate : ${response.statusCode}} : ${response.body}');
     }
   }
 }

@@ -7,7 +7,7 @@ class InputApi {
   //
 
   // Ubah Sesuai dengan API
-  final String baseUrl = "http://10.10.21.247:8000/api";
+  final String baseUrl = "https://pkbmharbang.com/api/create-absen";
   final storage = FlutterSecureStorage();
 
   Future<Map<String, dynamic>> inputAbsent(
@@ -21,7 +21,7 @@ class InputApi {
 
     //----------
     final response = await http.post(
-      Uri.parse('$baseUrl/create-absen'),
+      Uri.parse('$baseUrl'),
 
       //---------
       headers: {'Authorization': 'Bearer $token'},

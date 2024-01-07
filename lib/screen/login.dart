@@ -26,7 +26,7 @@ class MySignIn extends StatelessWidget {
       Navigator.pushReplacementNamed(context, '/dashboard');
     } catch (e) {
       SnackBar(content: Text("Login Gagal ${e}"));
-      print('Authentication failed. Error: $e');
+      print('Errorrsr: $e');
       // Handle authentication failure
     }
   }

@@ -6,7 +6,7 @@ class ViewInputApi {
   // APIs
 
   // Ubah Sesuai dengan API
-  final String baseUrl = "http://10.10.21.247:8000/api";
+  final String baseUrl = "https://pkbmharbang.com/api/user-data-absen";
   final storage = FlutterSecureStorage();
 
   Future<Map<String, dynamic>> UserDataAbsen(
@@ -20,7 +20,7 @@ class ViewInputApi {
     }
 
     final response = await http.post(
-      Uri.parse('$baseUrl/user-data-absen'),
+      Uri.parse('$baseUrl'),
       headers: {'Authorization': 'Bearer $token'},
       body: {'bulan': bulan, 'tahun': tahun},
     );
@@ -32,8 +32,7 @@ class ViewInputApi {
       final jsonResponse = jsonDecode(response.body);
       return jsonResponse;
     } else {
-      print("bulan = $bulan");
-      print("tahun $tahun");
+      print(response.body);
       return jsonDecode(response.body);
     }
   }

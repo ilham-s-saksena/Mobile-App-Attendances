@@ -5,14 +5,14 @@ class RegisterApi {
   //-----
 
   // Ubah Sesuai dengan API
-  final String baseUrl = "http://10.10.21.247:8000/api";
+  final String baseUrl = "https://pkbmharbang.com/api/register";
   final storage = FlutterSecureStorage();
 
   Future<String?> authenticate(String name, String email, String password,
       String konfirmasi_password) async {
     //----------
     final response = await http.post(
-      Uri.parse('$baseUrl/register'),
+      Uri.parse('$baseUrl'),
 
       //---------
       body: {

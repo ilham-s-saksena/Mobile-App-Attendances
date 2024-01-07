@@ -6,7 +6,7 @@ class ApiService {
   //----------------------
 
   // Ubah Sesuai dengan API
-  static const String baseUrl = "http://10.10.21.247:8000/api/profile";
+  static const String baseUrl = "https://pkbmharbang.com/api/profile";
   static final storage = FlutterSecureStorage();
 
   static Future<String?> uploadImage(File imageFile, String name, String email,

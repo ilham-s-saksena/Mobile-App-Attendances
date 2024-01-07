@@ -39,7 +39,7 @@ class _AbsenViewFormState extends State<AbsenViewForm> {
     final userManager = Provider.of<UserManager>(context);
 
     //Ubah Sesuai dengan API
-    final url = "http://10.10.21.247:8000/img/";
+    final url = "https://pkbmharbang.com/img/";
 
     return FutureBuilder<Map<String, dynamic>>(
         future: ViewInputApi().UserDataAbsen(bulan_terpilih, tahun_terpilih),

@@ -7,13 +7,13 @@ class DeleteApi {
   //
 
   //Ubah Sesuai dengan API
-  final String baseUrl = "http://10.10.21.247:8000/api";
+  final String baseUrl = "https://pkbmharbang.com/api/delete-absen";
   final storage = FlutterSecureStorage();
 
   Future<int?> deleteing(int id) async {
     final token = await storage.read(key: 'Harbang.Januari@12');
     final response = await http.delete(
-      Uri.parse('$baseUrl/delete-absen'),
+      Uri.parse('$baseUrl'),
       headers: {'Authorization': 'Bearer $token'},
       body: jsonEncode({'id': id}), // Mengubah body menjadi string JSON
     );

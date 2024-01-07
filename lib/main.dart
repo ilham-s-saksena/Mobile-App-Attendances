@@ -19,7 +19,9 @@ class PKBM extends StatelessWidget {
   PKBM();
 
   //Ubah Sesuai dengan API
-  final LoginApi apiManager = LoginApi(baseUrl: 'http://10.10.21.247:8000');
+  final LoginApi apiManager =
+      LoginApi(baseUrl: 'https://pkbmharbang.com/api/login');
+
   @override
   Widget build(BuildContext context) {
     return MultiProvider(

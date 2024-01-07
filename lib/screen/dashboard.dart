@@ -30,7 +30,7 @@ class _DashboardFormState extends State<DashboardForm> {
     final userManager = Provider.of<UserManager>(context);
 
     //Ubah Sesuai API anda
-    final url = "http://10.10.21.247:8000/img/";
+    final url = "https://pkbmharbang.com/img/";
 
     //--
 
@@ -43,9 +43,8 @@ class _DashboardFormState extends State<DashboardForm> {
               child: CircularProgressIndicator(),
             );
           } else if (snapshot.hasError) {
-            WidgetsBinding.instance!.addPostFrameCallback((_) {
-              Navigator.pushReplacementNamed(context, '/login');
-            });
+            Navigator.pushReplacementNamed(context, '/login');
+
             return Center();
           } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
             return Center(
