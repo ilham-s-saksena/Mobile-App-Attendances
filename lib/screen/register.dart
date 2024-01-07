@@ -35,8 +35,8 @@ class _MySignUpFormState extends State<MySignUpForm> {
             Column(
               children: [
                 Image.asset(
-                  'assets/up.png', // Ganti dengan path logo yang sesuai
-                  height: 130, // Sesuaikan ukuran gambar
+                  'assets/up.png',
+                  height: 130,
                 ),
                 Container(
                   alignment: Alignment.center,

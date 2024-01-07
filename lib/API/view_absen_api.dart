@@ -3,9 +3,7 @@ import 'package:http/http.dart' as http;
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 class ViewInputApi {
-  // APIs
-
-  // Ubah Sesuai dengan API
+// API sudah di Hosting
   final String baseUrl = "https://pkbmharbang.com/api/user-data-absen";
   final storage = FlutterSecureStorage();
 

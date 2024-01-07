@@ -4,9 +4,7 @@ import 'package:http/http.dart' as http;
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 class RegisterApi {
-  //
-
-  // Ubah sesuai dengan API
+  // API sudah di Hosting
   final String baseUrl = "https://pkbmharbang.com/api/dashboard";
   final storage = FlutterSecureStorage();
 

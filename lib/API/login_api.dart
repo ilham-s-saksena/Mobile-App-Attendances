@@ -16,8 +16,6 @@ class LoginApi {
     if (response.statusCode == 200) {
       final jsonResponse = jsonDecode(response.body);
       final token = jsonResponse['token'];
-
-      // Save the token securely
       await storage.write(key: 'Harbang.Januari@12', value: token);
 
       return token;

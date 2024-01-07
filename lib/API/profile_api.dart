@@ -3,9 +3,7 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:http/http.dart' as http;
 
 class ApiService {
-  //----------------------
-
-  // Ubah Sesuai dengan API
+// API sudah di Hosting
   static const String baseUrl = "https://pkbmharbang.com/api/profile";
   static final storage = FlutterSecureStorage();
 

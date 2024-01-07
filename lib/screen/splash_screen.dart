@@ -23,7 +23,6 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Stack(
           alignment: Alignment.center,
           children: [
-            // Logo di tengah layar
             Image.asset(
               'assets/logo.png',
               width: 200,

@@ -27,7 +27,6 @@ class MySignIn extends StatelessWidget {
     } catch (e) {
       SnackBar(content: Text("Login Gagal ${e}"));
       print('Errorrsr: $e');
-      // Handle authentication failure
     }
   }
 
@@ -39,7 +38,6 @@ class MySignIn extends StatelessWidget {
       future: getToken(),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          // Menampilkan loading indicator atau layar loading jika diperlukan
           return Scaffold(
             body: Center(
               child: CircularProgressIndicator(),

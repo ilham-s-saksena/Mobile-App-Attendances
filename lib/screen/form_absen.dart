@@ -41,7 +41,7 @@ class _InputFormState extends State<InputForm> {
   Widget build(BuildContext context) {
     final userManager = Provider.of<UserManager>(context);
 
-    //Ubah Sesuai dengan API
+    //API SUdah DI Hosting
     final url = "https://pkbmharbang.com/img/";
 
     return FutureBuilder<Map<String, dynamic>>(
