@@ -25,7 +25,9 @@ class MySignIn extends StatelessWidget {
       userManager.setAuthToken(token);
       Navigator.pushReplacementNamed(context, '/dashboard');
     } catch (e) {
-      SnackBar(content: Text("Login Gagal ${e}"));
+      ScaffoldMessenger.of(context)
+          .showSnackBar(SnackBar(content: Text("Error: $e")));
+
       print('Errorrsr: $e');
     }
   }
@@ -266,6 +268,43 @@ class MySignIn extends StatelessWidget {
                       )
                     ],
                     mainAxisAlignment: MainAxisAlignment.center,
+                  ),
+
+                  SizedBox(
+                    height: 30,
+                  ),
+
+                  Row(
+                    children: <Widget>[
+                      Expanded(
+                        flex: 1,
+                        child: Container(
+                          margin: EdgeInsets.only(right: 5.0, left: 11),
+                          child: Divider(
+                            color: Colors.grey,
+                            thickness: 1,
+                            endIndent: 10,
+                          ),
+                        ),
+                      ),
+                      Text(
+                        '© 2024-2025 PKBM Harapan Bangsa™. All Rights Reserved.',
+                        style: TextStyle(
+                          fontSize: 10.0,
+                        ),
+                      ),
+                      Expanded(
+                        flex: 1,
+                        child: Container(
+                          margin: EdgeInsets.only(left: 5.0, right: 11),
+                          child: Divider(
+                            color: Colors.grey,
+                            thickness: 1,
+                            indent: 10,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
