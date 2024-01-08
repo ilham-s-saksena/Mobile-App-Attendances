@@ -72,7 +72,7 @@ class _AbsenViewFormState extends State<AbsenViewForm> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      padding: EdgeInsets.only(top: 40, left: 10, right: 10),
+                      padding: EdgeInsets.only(top: 5, left: 10, right: 10),
                       child: Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
@@ -104,7 +104,7 @@ class _AbsenViewFormState extends State<AbsenViewForm> {
                                                   Colors.indigoAccent),
                                           minimumSize:
                                               MaterialStateProperty.all<Size>(
-                                                  Size(50, 50)),
+                                                  Size(40, 40)),
                                           padding: MaterialStateProperty.all<
                                                   EdgeInsetsGeometry>(
                                               EdgeInsets.zero),
@@ -120,16 +120,16 @@ class _AbsenViewFormState extends State<AbsenViewForm> {
                                     ),
                                   ),
 
-                                  SizedBox(width: 12),
+                                  SizedBox(width: 10),
 
                                   // Foto Profile
                                   ClipRRect(
                                     borderRadius: BorderRadius.circular(
                                         10), // Atur nilai sesuai keinginan untuk membuat sudut gambar menjadi rounded
                                     child: Image.network(
-                                      "${url}${userData['foto']}",
-                                      width: 70,
-                                      height: 70,
+                                      "${url}${Uri.encodeFull(userData['foto'])}",
+                                      width: 60,
+                                      height: 60,
                                       fit: BoxFit.cover,
                                     ),
                                   ),
@@ -138,7 +138,7 @@ class _AbsenViewFormState extends State<AbsenViewForm> {
 
                                   // Nama User
                                   Container(
-                                    width: 130,
+                                    width: 115,
                                     child: Column(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,

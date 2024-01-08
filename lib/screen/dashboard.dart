@@ -86,10 +86,9 @@ class _DashboardFormState extends State<DashboardForm> {
                                 children: [
                                   // Foto Profile
                                   ClipRRect(
-                                    borderRadius: BorderRadius.circular(
-                                        10), // Atur nilai sesuai keinginan untuk membuat sudut gambar menjadi rounded
+                                    borderRadius: BorderRadius.circular(10),
                                     child: Image.network(
-                                      "${url}${userData['foto']}",
+                                      "${url}${Uri.encodeFull(userData['foto'])}",
                                       width: 70,
                                       height: 70,
                                       fit: BoxFit.cover,
