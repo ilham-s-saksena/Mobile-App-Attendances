@@ -72,20 +72,30 @@ class _AbsenViewFormState extends State<AbsenViewForm> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      padding: EdgeInsets.only(top: 5, left: 10, right: 10),
+                      color: Colors.black87,
+                      padding: EdgeInsets.only(left: 1, right: 1),
                       child: Container(
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          color: Colors.indigo,
+                          borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(50),
+                            bottomRight: Radius.circular(50),
+                          ),
+                          color: Colors.orange,
                         ),
-                        padding: EdgeInsets.only(left: 2, right: 8),
+                        padding: EdgeInsets.only(
+                          left: 2,
+                          right: 8,
+                        ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Container(
                               decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(15),
-                                color: Colors.indigo,
+                                borderRadius: BorderRadius.only(
+                                  bottomLeft: Radius.circular(50),
+                                  bottomRight: Radius.circular(50),
+                                ),
+                                color: Colors.orange,
                               ),
                               padding: EdgeInsets.all(10),
                               child: Row(
@@ -93,7 +103,10 @@ class _AbsenViewFormState extends State<AbsenViewForm> {
                                   //Back
 
                                   ClipRRect(
-                                    borderRadius: BorderRadius.circular(25),
+                                    borderRadius: BorderRadius.only(
+                                      bottomLeft: Radius.circular(50),
+                                      topLeft: Radius.circular(50),
+                                    ),
                                     child: Container(
                                       width: 50,
                                       height: 50,
@@ -101,7 +114,7 @@ class _AbsenViewFormState extends State<AbsenViewForm> {
                                         style: ButtonStyle(
                                           backgroundColor:
                                               MaterialStateProperty.all<Color>(
-                                                  Colors.indigoAccent),
+                                                  Colors.orangeAccent),
                                           minimumSize:
                                               MaterialStateProperty.all<Size>(
                                                   Size(40, 40)),
@@ -177,7 +190,11 @@ class _AbsenViewFormState extends State<AbsenViewForm> {
                                 width: 50,
                                 height: 50,
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20),
+                                  borderRadius: BorderRadius.only(
+                                      bottomLeft: Radius.circular(10),
+                                      bottomRight: Radius.circular(40),
+                                      topLeft: Radius.circular(40),
+                                      topRight: Radius.circular(10)),
                                   color: Colors.white,
                                 ),
                                 child: DropdownButtonHideUnderline(
@@ -187,7 +204,7 @@ class _AbsenViewFormState extends State<AbsenViewForm> {
                                     hint: Icon(
                                       Icons.settings,
                                       size: 30,
-                                      color: Colors.indigo,
+                                      color: Colors.orange,
                                     ),
                                     iconSize: 0,
                                     style: TextStyle(
@@ -202,7 +219,7 @@ class _AbsenViewFormState extends State<AbsenViewForm> {
                                               Icon(
                                                 Icons.settings,
                                                 size: 30,
-                                                color: Colors.indigo,
+                                                color: Colors.orange,
                                               ),
                                             ],
                                           ),
@@ -217,7 +234,7 @@ class _AbsenViewFormState extends State<AbsenViewForm> {
                                               Icon(
                                                 Icons.exit_to_app,
                                                 size: 30,
-                                                color: Colors.indigo,
+                                                color: Colors.orange,
                                               ),
                                             ],
                                           ),
@@ -242,15 +259,15 @@ class _AbsenViewFormState extends State<AbsenViewForm> {
                         ),
                       ),
                     ),
-
                     Container(
+                      color: Colors.black87,
                       child: Align(
                         alignment: Alignment.center,
                         child: Text(
                           "DATA ABSEN MENGAJAR ANDA",
                           style: TextStyle(
                               fontSize: 22,
-                              color: Colors.indigo,
+                              color: Colors.orange,
                               fontWeight: FontWeight.w900),
                         ),
                       ),
@@ -259,11 +276,12 @@ class _AbsenViewFormState extends State<AbsenViewForm> {
 
                     //tanggal
                     Container(
+                      color: Colors.black87,
                       padding: EdgeInsets.only(
                           top: 10, left: 10, right: 10, bottom: 20),
                       child: Container(
                         decoration: BoxDecoration(
-                          color: Colors.indigo,
+                          color: Colors.orange,
                           borderRadius: BorderRadius.circular(15),
                         ),
                         padding: EdgeInsets.all(10),

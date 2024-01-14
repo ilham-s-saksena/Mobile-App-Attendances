@@ -61,16 +61,20 @@ class _DashboardFormState extends State<DashboardForm> {
             final formattedPenghasilan = formatCurrency.format(penghasilan);
 
             return Scaffold(
+              backgroundColor: Colors.black,
               body: SingleChildScrollView(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      padding: EdgeInsets.only(top: 40, left: 10, right: 10),
+                      padding: EdgeInsets.only(left: 10, right: 10),
                       child: Container(
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          color: Colors.indigo,
+                          borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(50),
+                            bottomRight: Radius.circular(50),
+                          ),
+                          color: Colors.orange,
                         ),
                         padding: EdgeInsets.only(left: 2, right: 8),
                         child: Row(
@@ -78,15 +82,23 @@ class _DashboardFormState extends State<DashboardForm> {
                           children: [
                             Container(
                               decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(15),
-                                color: Colors.indigo,
+                                borderRadius: BorderRadius.only(
+                                  bottomLeft: Radius.circular(50),
+                                  bottomRight: Radius.circular(50),
+                                ),
+                                color: Colors.orangeAccent,
                               ),
-                              padding: EdgeInsets.all(10),
+                              padding: EdgeInsets.only(
+                                  left: 10, right: 10, bottom: 10, top: 40),
                               child: Row(
                                 children: [
                                   // Foto Profile
                                   ClipRRect(
-                                    borderRadius: BorderRadius.circular(10),
+                                    borderRadius: BorderRadius.only(
+                                        bottomLeft: Radius.circular(40),
+                                        bottomRight: Radius.circular(20),
+                                        topLeft: Radius.circular(10),
+                                        topRight: Radius.circular(20)),
                                     child: Image.network(
                                       "${url}${Uri.encodeFull(userData['foto'])}",
                                       width: 70,
@@ -126,13 +138,17 @@ class _DashboardFormState extends State<DashboardForm> {
 
                             //Tombol Setting
                             Container(
-                              padding: EdgeInsets.only(top: 1, right: 1),
+                              padding: EdgeInsets.only(top: 40, right: 1),
                               alignment: Alignment.topRight,
                               child: Container(
                                 width: 50,
                                 height: 50,
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20),
+                                  borderRadius: BorderRadius.only(
+                                      bottomLeft: Radius.circular(10),
+                                      bottomRight: Radius.circular(40),
+                                      topLeft: Radius.circular(40),
+                                      topRight: Radius.circular(10)),
                                   color: Colors.white,
                                 ),
                                 child: DropdownButtonHideUnderline(
@@ -142,7 +158,7 @@ class _DashboardFormState extends State<DashboardForm> {
                                     hint: Icon(
                                       Icons.settings,
                                       size: 30,
-                                      color: Colors.indigo,
+                                      color: Colors.orange,
                                     ),
                                     iconSize: 0,
                                     style: TextStyle(
@@ -157,7 +173,7 @@ class _DashboardFormState extends State<DashboardForm> {
                                               Icon(
                                                 Icons.settings,
                                                 size: 30,
-                                                color: Colors.indigo,
+                                                color: Colors.orange,
                                               ),
                                             ],
                                           ),
@@ -172,7 +188,7 @@ class _DashboardFormState extends State<DashboardForm> {
                                               Icon(
                                                 Icons.exit_to_app,
                                                 size: 30,
-                                                color: Colors.indigo,
+                                                color: Colors.orange,
                                               ),
                                             ],
                                           ),
@@ -209,7 +225,7 @@ class _DashboardFormState extends State<DashboardForm> {
                       child: Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
-                          color: Colors.white,
+                          color: Colors.black12,
                         ),
                         padding: EdgeInsets.only(left: 5, right: 5),
                         child: Row(
@@ -219,7 +235,7 @@ class _DashboardFormState extends State<DashboardForm> {
                               child: Container(
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(15),
-                                  color: Colors.indigo,
+                                  color: Colors.orange,
                                 ),
                                 padding: EdgeInsets.all(16),
                                 child: Row(
@@ -264,7 +280,7 @@ class _DashboardFormState extends State<DashboardForm> {
                                                         fontWeight:
                                                             FontWeight.bold,
                                                         fontSize: 36,
-                                                        color: Colors.indigo,
+                                                        color: Colors.orange,
                                                       ),
                                                     ),
                                                   ),
@@ -302,7 +318,7 @@ class _DashboardFormState extends State<DashboardForm> {
                               child: Container(
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(15),
-                                  color: Colors.indigo,
+                                  color: Colors.orange,
                                 ),
                                 padding: EdgeInsets.all(16),
                                 child: Row(
@@ -347,7 +363,7 @@ class _DashboardFormState extends State<DashboardForm> {
                                                         fontWeight:
                                                             FontWeight.bold,
                                                         fontSize: 36,
-                                                        color: Colors.indigo,
+                                                        color: Colors.orange,
                                                       ),
                                                     ),
                                                   ),
@@ -379,32 +395,37 @@ class _DashboardFormState extends State<DashboardForm> {
                       children: [
                         Expanded(
                           child: Container(
-                            padding:
-                                EdgeInsets.only(left: 15, right: 15, top: 12),
-                            child: ElevatedButton.icon(
-                              onPressed: () {
-                                Navigator.pushReplacementNamed(
-                                    context, '/formAbsen');
-                              },
-                              style: ElevatedButton.styleFrom(
-                                primary: Colors.blueAccent,
-                                padding: EdgeInsets.only(top: 18, bottom: 18),
-                              ),
-                              label: Text(
-                                "Isi Absen Mengajar",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
+                              padding:
+                                  EdgeInsets.only(left: 15, right: 15, top: 12),
+                              child: ElevatedButton.icon(
+                                onPressed: () {
+                                  Navigator.of(context)
+                                      .pushReplacementNamed('/formAbsen');
+                                },
+                                style: ElevatedButton.styleFrom(
+                                  padding: EdgeInsets.only(top: 18, bottom: 18),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(15),
+                                  ),
+                                  primary: Colors.lightBlue,
+                                  onPrimary: Colors.blue,
+                                  elevation: 5,
+                                  shadowColor: Colors.blue,
                                 ),
-                              ),
-                              icon: Icon(
-                                Icons
-                                    .file_open_outlined, // Ganti dengan ikon yang diinginkan
-                                size: 24,
-                              ),
-                            ),
-                          ),
+                                label: Text(
+                                  "Isi Absen Mengajar",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                icon: Icon(
+                                  Icons.file_open_outlined,
+                                  size: 24,
+                                  color: Colors.white,
+                                ),
+                              )),
                         ),
                       ],
                     ),
@@ -447,7 +468,7 @@ class _DashboardFormState extends State<DashboardForm> {
                     Container(
                       padding: EdgeInsets.only(top: 20, bottom: 160),
                       decoration: BoxDecoration(
-                        color: Colors.indigo[100],
+                        color: Colors.orange[100],
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(20),
                           topRight: Radius.circular(20),
@@ -463,7 +484,7 @@ class _DashboardFormState extends State<DashboardForm> {
                                   child: Container(
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(15),
-                                      color: Colors.indigo,
+                                      color: Colors.orange,
                                     ),
                                     padding: EdgeInsets.only(left: 2, right: 8),
                                     child: Row(
@@ -474,7 +495,7 @@ class _DashboardFormState extends State<DashboardForm> {
                                           decoration: BoxDecoration(
                                             borderRadius:
                                                 BorderRadius.circular(15),
-                                            color: Colors.indigo,
+                                            color: Colors.orange,
                                           ),
                                           padding: EdgeInsets.all(10),
                                           child: Column(
@@ -516,7 +537,7 @@ class _DashboardFormState extends State<DashboardForm> {
                                               style: TextStyle(
                                                 fontWeight: FontWeight.bold,
                                                 fontSize: 30,
-                                                color: Colors.indigo,
+                                                color: Colors.orange,
                                               ),
                                             ),
                                           ),
@@ -543,7 +564,7 @@ class _DashboardFormState extends State<DashboardForm> {
                               child: Text(
                                 "Lihat Selengkapnya",
                                 style: TextStyle(
-                                  color: Colors.indigo[900],
+                                  color: Colors.orange[900],
                                   fontSize: 16,
                                   fontWeight: FontWeight.bold,
                                 ),
@@ -563,7 +584,7 @@ class _DashboardFormState extends State<DashboardForm> {
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 20,
-                                    color: Colors.indigo,
+                                    color: Colors.orange,
                                   ),
                                 ),
                               )
@@ -585,7 +606,7 @@ class _DashboardFormState extends State<DashboardForm> {
                                   child: Container(
                                     decoration: BoxDecoration(
                                       color:
-                                          Colors.indigo, // Warna latar belakang
+                                          Colors.orange, // Warna latar belakang
                                     ),
                                     child: Padding(
                                       padding: EdgeInsets.only(
@@ -849,7 +870,7 @@ class _DashboardFormState extends State<DashboardForm> {
                                   ),
                                   child: Container(
                                     color: Colors
-                                        .indigo, // Warna latar belakang footer
+                                        .orange, // Warna latar belakang footer
                                     child: Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,

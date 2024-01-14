@@ -19,16 +19,16 @@ class SelectInputWidget extends StatelessWidget {
       ),
       child: DropdownButtonHideUnderline(
         child: DropdownButton<String>(
-          hint: Text("Pilih Kelas", style: TextStyle(color: Colors.indigo)),
+          hint: Text("Pilih Kelas", style: TextStyle(color: Colors.orange)),
           value: kelas_terpilih,
           icon: Icon(
             Icons.arrow_drop_down,
-            color: Colors.indigo,
+            color: Colors.orange,
           ),
           iconSize: 24,
           elevation: 16,
           style: TextStyle(
-              color: Colors.indigo, fontSize: 16, fontWeight: FontWeight.bold),
+              color: Colors.orange, fontSize: 16, fontWeight: FontWeight.bold),
           onChanged: (String? newValue) {
             if (newValue != null) {
               kelas_dipilih(newValue);

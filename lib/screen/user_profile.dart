@@ -119,20 +119,27 @@ class _UserProfileFormState extends State<UserProfileForm> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      padding: EdgeInsets.only(top: 40, left: 10, right: 10),
+                      color: Colors.black87,
+                      padding: EdgeInsets.only(left: 10, right: 10),
                       child: Container(
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          color: Colors.indigo,
+                          borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(50),
+                            bottomRight: Radius.circular(50),
+                          ),
+                          color: Colors.orange,
                         ),
-                        padding: EdgeInsets.only(left: 2, right: 8),
+                        padding: EdgeInsets.only(left: 2, right: 8, top: 40),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Container(
                               decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(15),
-                                color: Colors.indigo,
+                                borderRadius: BorderRadius.only(
+                                  bottomLeft: Radius.circular(50),
+                                  bottomRight: Radius.circular(50),
+                                ),
+                                color: Colors.orange,
                               ),
                               padding: EdgeInsets.all(10),
                               child: Row(
@@ -140,7 +147,10 @@ class _UserProfileFormState extends State<UserProfileForm> {
                                   //Back
 
                                   ClipRRect(
-                                    borderRadius: BorderRadius.circular(25),
+                                    borderRadius: BorderRadius.only(
+                                      bottomLeft: Radius.circular(50),
+                                      topLeft: Radius.circular(50),
+                                    ),
                                     child: Container(
                                       width: 50,
                                       height: 50,
@@ -148,7 +158,7 @@ class _UserProfileFormState extends State<UserProfileForm> {
                                         style: ButtonStyle(
                                           backgroundColor:
                                               MaterialStateProperty.all<Color>(
-                                                  Colors.indigoAccent),
+                                                  Colors.orangeAccent),
                                           minimumSize:
                                               MaterialStateProperty.all<Size>(
                                                   Size(40, 40)),
@@ -224,7 +234,11 @@ class _UserProfileFormState extends State<UserProfileForm> {
                                 width: 50,
                                 height: 50,
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20),
+                                  borderRadius: BorderRadius.only(
+                                      bottomLeft: Radius.circular(10),
+                                      bottomRight: Radius.circular(40),
+                                      topLeft: Radius.circular(40),
+                                      topRight: Radius.circular(10)),
                                   color: Colors.white,
                                 ),
                                 child: DropdownButtonHideUnderline(
@@ -234,7 +248,7 @@ class _UserProfileFormState extends State<UserProfileForm> {
                                     hint: Icon(
                                       Icons.settings,
                                       size: 30,
-                                      color: Colors.indigo,
+                                      color: Colors.orange,
                                     ),
                                     iconSize: 0,
                                     style: TextStyle(
@@ -249,7 +263,7 @@ class _UserProfileFormState extends State<UserProfileForm> {
                                               Icon(
                                                 Icons.settings,
                                                 size: 30,
-                                                color: Colors.indigo,
+                                                color: Colors.orange,
                                               ),
                                             ],
                                           ),
@@ -264,7 +278,7 @@ class _UserProfileFormState extends State<UserProfileForm> {
                                               Icon(
                                                 Icons.exit_to_app,
                                                 size: 30,
-                                                color: Colors.indigo,
+                                                color: Colors.orange,
                                               ),
                                             ],
                                           ),
@@ -291,10 +305,11 @@ class _UserProfileFormState extends State<UserProfileForm> {
                     ),
 
                     Container(
+                      color: Colors.black87,
                       padding: EdgeInsets.only(top: 10, left: 10, right: 10),
                       child: Container(
                         decoration: BoxDecoration(
-                          color: Colors.indigo,
+                          color: Colors.orange,
                           borderRadius: BorderRadius.circular(15),
                         ),
                         padding: EdgeInsets.all(10),
@@ -339,7 +354,7 @@ class _UserProfileFormState extends State<UserProfileForm> {
                                 SizedBox(height: 20),
                                 ElevatedButton(
                                   onPressed: () =>
-                                      _pickImage(ImageSource.camera),
+                                      _pickImage(ImageSource.gallery),
                                   child: Text(
                                     "Ganti Foto",
                                     style: TextStyle(fontSize: 18),

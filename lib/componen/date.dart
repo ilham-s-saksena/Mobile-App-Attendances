@@ -35,7 +35,7 @@ class DateInputWidget extends StatelessWidget {
           children: [
             Icon(
               Icons.calendar_today,
-              color: Colors.indigo,
+              color: Colors.orange,
             ),
             SizedBox(width: 10),
             Expanded(
@@ -45,7 +45,7 @@ class DateInputWidget extends StatelessWidget {
                     : 'Select Date',
                 style: TextStyle(
                     fontSize: 16,
-                    color: Colors.indigo,
+                    color: Colors.orange,
                     fontWeight: FontWeight.bold),
               ),
             ),

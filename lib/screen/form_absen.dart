@@ -14,8 +14,18 @@ class Input extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double minHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
-      body: InputForm(),
+      body: ConstrainedBox(
+        constraints: BoxConstraints(
+          minHeight: minHeight,
+          maxHeight: MediaQuery.of(context)
+              .size
+              .height, // Atur tinggi maksimum sesuai kebutuhan
+        ),
+        child: InputForm(),
+      ),
     );
   }
 }
@@ -69,20 +79,27 @@ class _InputFormState extends State<InputForm> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      padding: EdgeInsets.only(top: 40, left: 10, right: 10),
+                      color: Colors.black87,
+                      padding: EdgeInsets.only(left: 10, right: 10),
                       child: Container(
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          color: Colors.indigo,
+                          borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(50),
+                            bottomRight: Radius.circular(50),
+                          ),
+                          color: Colors.orange,
                         ),
-                        padding: EdgeInsets.only(left: 2, right: 8),
+                        padding: EdgeInsets.only(left: 2, right: 8, top: 40),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Container(
                               decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(15),
-                                color: Colors.indigo,
+                                borderRadius: BorderRadius.only(
+                                  bottomLeft: Radius.circular(50),
+                                  bottomRight: Radius.circular(50),
+                                ),
+                                color: Colors.orange,
                               ),
                               padding: EdgeInsets.all(10),
                               child: Row(
@@ -90,7 +107,10 @@ class _InputFormState extends State<InputForm> {
                                   //Back
 
                                   ClipRRect(
-                                    borderRadius: BorderRadius.circular(25),
+                                    borderRadius: BorderRadius.only(
+                                      bottomLeft: Radius.circular(50),
+                                      topLeft: Radius.circular(50),
+                                    ),
                                     child: Container(
                                       width: 50,
                                       height: 50,
@@ -98,7 +118,7 @@ class _InputFormState extends State<InputForm> {
                                         style: ButtonStyle(
                                           backgroundColor:
                                               MaterialStateProperty.all<Color>(
-                                                  Colors.indigoAccent),
+                                                  Colors.orangeAccent),
                                           minimumSize:
                                               MaterialStateProperty.all<Size>(
                                                   Size(40, 40)),
@@ -174,7 +194,11 @@ class _InputFormState extends State<InputForm> {
                                 width: 50,
                                 height: 50,
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20),
+                                  borderRadius: BorderRadius.only(
+                                      bottomLeft: Radius.circular(10),
+                                      bottomRight: Radius.circular(40),
+                                      topLeft: Radius.circular(40),
+                                      topRight: Radius.circular(10)),
                                   color: Colors.white,
                                 ),
                                 child: DropdownButtonHideUnderline(
@@ -184,7 +208,7 @@ class _InputFormState extends State<InputForm> {
                                     hint: Icon(
                                       Icons.settings,
                                       size: 30,
-                                      color: Colors.indigo,
+                                      color: Colors.orange,
                                     ),
                                     iconSize: 0,
                                     style: TextStyle(
@@ -199,7 +223,7 @@ class _InputFormState extends State<InputForm> {
                                               Icon(
                                                 Icons.settings,
                                                 size: 30,
-                                                color: Colors.indigo,
+                                                color: Colors.orange,
                                               ),
                                             ],
                                           ),
@@ -214,7 +238,7 @@ class _InputFormState extends State<InputForm> {
                                               Icon(
                                                 Icons.exit_to_app,
                                                 size: 30,
-                                                color: Colors.indigo,
+                                                color: Colors.orange,
                                               ),
                                             ],
                                           ),
@@ -241,13 +265,14 @@ class _InputFormState extends State<InputForm> {
                     ),
 
                     Container(
+                      color: Colors.black87,
                       child: Align(
                         alignment: Alignment.center,
                         child: Text(
                           "INPUT DATA ABSEN MENGAJAR",
                           style: TextStyle(
                               fontSize: 22,
-                              color: Colors.indigo,
+                              color: Colors.orange,
                               fontWeight: FontWeight.w900),
                         ),
                       ),
@@ -256,10 +281,11 @@ class _InputFormState extends State<InputForm> {
 
                     //tanggal
                     Container(
+                      color: Colors.black87,
                       padding: EdgeInsets.only(top: 10, left: 10, right: 10),
                       child: Container(
                         decoration: BoxDecoration(
-                          color: Colors.indigo,
+                          color: Colors.orange,
                           borderRadius: BorderRadius.circular(15),
                         ),
                         padding: EdgeInsets.all(10),
@@ -313,18 +339,29 @@ class _InputFormState extends State<InputForm> {
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(10)),
                             child: TextField(
-                              cursorColor: Colors.indigo,
+                              cursorColor: Colors.orange,
                               controller: materiController,
                               decoration: InputDecoration(
-                                fillColor: Colors.indigo,
-                                iconColor: Colors.indigo,
-                                focusColor: Colors.indigo,
-                                prefixIconColor: Colors.indigo,
-                                suffixIconColor: Colors.indigo,
+                                filled: true,
+                                fillColor: Colors.white,
+                                iconColor: Colors.orange,
+
+                                focusColor: Colors.orange,
+                                prefixIconColor: Colors.orange,
+                                suffixIconColor: Colors.orange,
+
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10),
+                                  borderSide: BorderSide(
+                                    color: Colors.white, // Warna border
+                                  ),
                                 ),
                                 labelText: 'Materi',
+                                labelStyle: TextStyle(
+                                  color: Colors.orange, // Warna teks label
+                                  backgroundColor: Colors
+                                      .white, // Warna latar belakang label
+                                ),
                                 prefixIcon: Icon(Icons
                                     .book_rounded), // Menambahkan ikon di sebelah kiri
                               ),
@@ -357,9 +394,11 @@ class _InputFormState extends State<InputForm> {
                               shape: MaterialStateProperty.all<OutlinedBorder>(
                                 RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10),
-                                  side: BorderSide(color: Colors.indigo),
+                                  side: BorderSide(color: Colors.orange),
                                 ),
                               ),
+                              minimumSize: MaterialStateProperty.all<Size>(
+                                  Size(150, 50)), // Atur ukuran minimum tombol
                             ),
                             onPressed: () async {
                               if (selectedDate == null ||
@@ -404,7 +443,7 @@ class _InputFormState extends State<InputForm> {
                             child: Text(
                               'Submit',
                               style: TextStyle(
-                                  color: Colors.indigo,
+                                  color: Colors.orange,
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold),
                             ),
