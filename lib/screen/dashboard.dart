@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import '/models/users.dart';
 // import '/models/user.dart';
 import '/API/dashboard_api.dart';
+import '/screen/test.dart';
 import 'package:intl/intl.dart';
 
 class Dashboard extends StatelessWidget {
@@ -61,7 +62,7 @@ class _DashboardFormState extends State<DashboardForm> {
             final formattedPenghasilan = formatCurrency.format(penghasilan);
 
             return Scaffold(
-              backgroundColor: Colors.black,
+              backgroundColor: Colors.black12,
               body: SingleChildScrollView(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -225,7 +226,6 @@ class _DashboardFormState extends State<DashboardForm> {
                       child: Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
-                          color: Colors.black12,
                         ),
                         padding: EdgeInsets.only(left: 5, right: 5),
                         child: Row(
@@ -399,8 +399,14 @@ class _DashboardFormState extends State<DashboardForm> {
                                   EdgeInsets.only(left: 15, right: 15, top: 12),
                               child: ElevatedButton.icon(
                                 onPressed: () {
-                                  Navigator.of(context)
-                                      .pushReplacementNamed('/formAbsen');
+                                  showDialog(
+                                    context: context,
+                                    builder: (BuildContext context) {
+                                      return PopupContent();
+                                    },
+                                  );
+                                  // Navigator.of(context)
+                                  //     .pushReplacementNamed('/formAbsen');
                                 },
                                 style: ElevatedButton.styleFrom(
                                   padding: EdgeInsets.only(top: 18, bottom: 18),
@@ -432,7 +438,8 @@ class _DashboardFormState extends State<DashboardForm> {
 
                     if (message != null)
                       Padding(
-                        padding: const EdgeInsets.all(15.0),
+                        padding:
+                            const EdgeInsets.only(top: 15, left: 20, right: 20),
                         child: Container(
                           decoration: BoxDecoration(
                             color: Colors.green,
@@ -450,6 +457,7 @@ class _DashboardFormState extends State<DashboardForm> {
                               Expanded(
                                 child: Text(
                                   message,
+                                  // "a",
                                   style: TextStyle(color: Colors.white),
                                   overflow: TextOverflow
                                       .ellipsis, // Menggunakan ellipsis jika terlalu panjang
@@ -466,13 +474,14 @@ class _DashboardFormState extends State<DashboardForm> {
                     ),
 
                     Container(
-                      padding: EdgeInsets.only(top: 20, bottom: 160),
+                      padding: EdgeInsets.only(top: 20, bottom: 50),
                       decoration: BoxDecoration(
                         color: Colors.orange[100],
                         borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(20),
-                          topRight: Radius.circular(20),
-                        ),
+                            topLeft: Radius.circular(20),
+                            topRight: Radius.circular(20),
+                            bottomLeft: Radius.circular(10),
+                            bottomRight: Radius.circular(10)),
                       ),
                       child: Column(
                         children: [
@@ -877,7 +886,13 @@ class _DashboardFormState extends State<DashboardForm> {
                                       children: [
                                         TextButton.icon(
                                           onPressed: () {
-                                            // Handle button press
+                                            // showDialog(
+                                            //   context: context,
+                                            //   builder: (BuildContext context) {
+                                            //     // Gunakan PopupContent dari file terpisah
+                                            //     return PopupContent();
+                                            //   },
+                                            // );
                                           },
                                           label: Text(
                                             'Lihat Selengkapnya',
@@ -909,3 +924,10 @@ class _DashboardFormState extends State<DashboardForm> {
     // Layouting
   }
 }
+
+
+
+/// Form
+/// 
+/// 
+

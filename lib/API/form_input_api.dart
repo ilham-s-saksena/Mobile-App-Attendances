@@ -38,7 +38,7 @@ class InputApi {
     } else {
       final message = jsonDecode(response.body);
       final errorss = message['message'];
-      throw Exception('Kode :${response.statusCode}\nMessage: ${errorss}');
+      throw Exception('Keterangan: ${errorss}');
     }
   }
 }

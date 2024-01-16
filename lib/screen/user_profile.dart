@@ -119,7 +119,7 @@ class _UserProfileFormState extends State<UserProfileForm> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      color: Colors.black87,
+                      color: Colors.black12,
                       padding: EdgeInsets.only(left: 10, right: 10),
                       child: Container(
                         decoration: BoxDecoration(
@@ -305,7 +305,7 @@ class _UserProfileFormState extends State<UserProfileForm> {
                     ),
 
                     Container(
-                      color: Colors.black87,
+                      color: Colors.black12,
                       padding: EdgeInsets.only(top: 10, left: 10, right: 10),
                       child: Container(
                         decoration: BoxDecoration(

@@ -14,16 +14,9 @@ class Input extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double minHeight = MediaQuery.of(context).size.height;
-
     return Scaffold(
       body: ConstrainedBox(
-        constraints: BoxConstraints(
-          minHeight: minHeight,
-          maxHeight: MediaQuery.of(context)
-              .size
-              .height, // Atur tinggi maksimum sesuai kebutuhan
-        ),
+        constraints: BoxConstraints(),
         child: InputForm(),
       ),
     );
@@ -50,6 +43,7 @@ class _InputFormState extends State<InputForm> {
   @override
   Widget build(BuildContext context) {
     final userManager = Provider.of<UserManager>(context);
+    double minHeight = MediaQuery.of(context).size.height;
 
     //API SUdah DI Hosting
     final url = "https://pkbmharbang.com/img/";
@@ -75,11 +69,13 @@ class _InputFormState extends State<InputForm> {
 
             return Scaffold(
               body: SingleChildScrollView(
+                  child: Container(
+                color: Colors.black87,
+                height: minHeight,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      color: Colors.black87,
                       padding: EdgeInsets.only(left: 10, right: 10),
                       child: Container(
                         decoration: BoxDecoration(
@@ -265,7 +261,6 @@ class _InputFormState extends State<InputForm> {
                     ),
 
                     Container(
-                      color: Colors.black87,
                       child: Align(
                         alignment: Alignment.center,
                         child: Text(
@@ -281,7 +276,6 @@ class _InputFormState extends State<InputForm> {
 
                     //tanggal
                     Container(
-                      color: Colors.black87,
                       padding: EdgeInsets.only(top: 10, left: 10, right: 10),
                       child: Container(
                         decoration: BoxDecoration(
@@ -493,7 +487,7 @@ class _InputFormState extends State<InputForm> {
                       )
                   ],
                 ),
-              ),
+              )),
             );
           }
         });
